@@ -6,10 +6,10 @@ import com.example.model.Account;
  * team : accounts-team
  */
 
-public class SqlAccountRepository {
+public class NoSqlAccountRepository implements AccountRepository {
 
-    public SqlAccountRepository(){
-        System.out.println("SqlAccountRepository component created..");
+    public NoSqlAccountRepository(){
+        System.out.println("NoSqlAccountRepository component created..");
     }
 
     public Account loadAccount(String accountNumber) {

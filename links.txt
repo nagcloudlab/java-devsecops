@@ -1,0 +1,2 @@
+notion-page:
+https://nagcloudlab.notion.site/java-devsecops-1f85bab9bf8780e7bb92eb3b298c058a?pvs=4

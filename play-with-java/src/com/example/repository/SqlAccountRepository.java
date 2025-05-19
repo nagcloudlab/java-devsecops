@@ -6,7 +6,7 @@ import com.example.model.Account;
  * team : accounts-team
  */
 
-public class SqlAccountRepository {
+public class SqlAccountRepository implements AccountRepository {
 
     public SqlAccountRepository(){
         System.out.println("SqlAccountRepository component created..");
