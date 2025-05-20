@@ -1,0 +1,45 @@
+
+
+-----------------------------------------------------------------
+why java-language?
+-----------------------------------------------------------------
+
+-> easy-to-learn because everything is object-oriented
+-> proven to be a reliable language
+-> platform-independent ( .java -> .class -> JVM -> OS)
+-> ready-to-use data-structures ( e.g ArrayList, HashMap, etc.)
+-> concurrent programming ( multi-threading )
+-> garbage collection ( no memory leaks )
+-> large community ( many libraries, frameworks, etc. )
+-> open-source ( free to use )
+-> any kind of application ( web, mobile, desktop, etc. )
+
+---------------------------------------------------------
+Java Environment Setup
+---------------------------------------------------------
+- devlopment envi
+
+    -> JDK (Java Development Kit)
+        tools:
+        -> javac (Java Compiler)
+        -> jps (Java Process Status Tool)
+        -> javadoc (Java Documentation Tool)
+        ...
+    -> build tools:
+        -> Maven
+        -> Gradle
+        ...
+    -> code editor:
+        -> IntelliJ IDEA
+        -> VS Code with java extensions
+
+- execution environment
+
+    -> JRE (Java Runtime Environment) -> JVM (Java Virtual Machine)
+        tools:
+        -> java (Java Application Launcher)
+        -> jconsole (Java Monitoring and Management Console)
+        -> jvisualvm (Java VisualVM)
+        ...
+
+---------------------------------------------------------------        
