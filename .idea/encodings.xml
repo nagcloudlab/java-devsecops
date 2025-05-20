@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/access-modifiers/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/access-modifiers/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/acessors-mutators/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/acessors-mutators/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-types/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-types/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/interfaces/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/interfaces/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money-transfer-ssytem/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/money-transfer-ssytem/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

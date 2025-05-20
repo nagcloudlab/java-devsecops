@@ -18,14 +18,14 @@ access modifiers
    - private
 
 
-------------------------------------------------------------------
-            same-package                      |  other-package
--------------------------------------------------------------------
-            same-type | sub-type | other-type |   sub-type | other-type
-------------------------------------------------------------------
-private    |   yes     |    no    |     no     |     no    |    no
-default    |   yes     |    yes    |     yes   |     no    |    no
-protected  |   yes     |    yes    |     yes   |    yes    |    no
-public     |   yes     |    yes    |     yes   |    yes    |   yes
+-----------------------------------------------------------------------------
+            same-package                        |  other-package
+-----------------------------------------------------------------------------
+            same-type | sub-type   | other-type |   sub-type | other-type
+-----------------------------------------------------------------------------
+private    |   yes     |    no     |     no     |     no    |    no
+default    |   yes     |    yes    |     yes    |     no    |    no
+protected  |   yes     |    yes    |     yes    |    yes    |    no
+public     |   yes     |    yes    |     yes    |    yes    |   yes
 
-------------------------------------------------------------------
+-----------------------------------------------------------------------------
