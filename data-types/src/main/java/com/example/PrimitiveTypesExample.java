@@ -27,13 +27,30 @@ public class PrimitiveTypesExample {
         char charValue = 'A'; // Unicode value for 'A' is 65
         char unicodeCharValue = '\u0041'; // Unicode representation of 'A'
         char inrSymbol = '\u8377'; // Unicode representation of Indian Rupee symbol
-        System.out.println(inrSymbol);
 
         // 4. Boolean type
         // boolean - 1 bit -> true or false
         boolean booleanValue = true;
         boolean isJavaFun = true;
 
+
+        //-------------------------------
+
+        int a = 10; // decimal
+        System.out.println(a); // 10
+        int b = 012; // octal (base 8)
+        System.out.println(b); // 10
+        int c = 0xA; // hexadecimal (base 16)
+        System.out.println(c); // 10
+        int d = 0b1010; // binary (base 2)
+        System.out.println(d); // 10
+
+        //----------------------------------
+
+        long cred_card = 1234_5678_9012_3456L; // long type for credit card number
+        long salary = 1_000_000L; // long type for salary
+
+        //----------------------------------
 
 
 

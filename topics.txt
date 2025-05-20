@@ -2,3 +2,9 @@
 - use-case to java-application
 - java-syntax-reference
 - java data-types
+- value-type-casting
+- object's abstraction & encapsulation
+    - access-modifiers
+    - package
+    - interface
+    
