@@ -1,4 +1,5 @@
 
+
 - use-case to java-application
 - java-syntax-reference
 - java data-types
@@ -7,4 +8,20 @@
     - packages & access-modifiers
     - acessors & mutators ( getters & setters)
     - interface(s)
-    
+- inheritance & polymorphism
+
+
+- exception-handling
+- collections
+    - list
+    - set
+    - map
+- Functional programming
+    - lambda expressions
+    - streams
+    - method references
+    - functional interfaces
+- concurrency
+    - threads
+    - synchronization
+    - concurrent collections

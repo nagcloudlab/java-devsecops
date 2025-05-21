@@ -1,0 +1,38 @@
+
+Java's user-defined data-types
+
+Interface vs Abstract-Class
+----------------------------
+
+
+similarities:
+
+ -> can't create instance of both
+ -> can have abstract methods
+
+ differences:
+
+  -> interface has no constructors
+  -> abstract class can have constructors
+
+  -> interface can have only constants
+  -> abstract class can have instance variables
+
+  -> interface can have only abstract methods ( before Java 8)
+  -> interface can have default methods (from Java 8)
+  -> interface can have static methods (from Java 8)
+  -> abstract class can have concrete methods
+
+
+---------------------------------------------------------------
+When to choose interface & abstract class?
+-----------------------------------------------------------------
+
+to design java-module
+------------------------
+
+Top-level : Interface   ( 100% abstract )
+Middle-level : Abstract class ( Partially abstract )
+Bottom-leve : Concrete class ( 0% abstract )
+
+---------------------------------------------------------------
