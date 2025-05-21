@@ -9,6 +9,8 @@
     - acessors & mutators ( getters & setters)
     - interface(s)
 - inheritance & polymorphism
+- design patterns
+
 
 
 - exception-handling
@@ -16,11 +18,14 @@
     - list
     - set
     - map
+
+
 - Functional programming
     - lambda expressions
     - streams
     - method references
     - functional interfaces
+
 - concurrency
     - threads
     - synchronization

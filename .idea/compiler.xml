@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="acessors-mutators" />
         <module name="interfaces" />
+        <module name="object-patterns" />
         <module name="inheritance-II" />
         <module name="money-transfer-ssytem" />
         <module name="inheritance-I" />
