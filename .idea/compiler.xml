@@ -12,6 +12,7 @@
         <module name="inheritance-II" />
         <module name="money-transfer-ssytem" />
         <module name="inheritance-I" />
+        <module name="recap" />
         <module name="access-modifiers" />
         <module name="data-types" />
       </profile>
