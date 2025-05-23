@@ -41,7 +41,7 @@ class ConnectionFactory {
 }
 
 
-public class Problem {
+public class FactoryPatterExample {
 
     public static void main(String[] args) {
 
