@@ -9,6 +9,11 @@ package com.example;
  * ---------------
  * -> code tangling / coupling multiple concerns together
  * -> code scattering / duplication
+ *
+ *
+ * Solution:
+ * -> Proxy Design Pattern
+ *
  */
 
 interface IGreeting {
@@ -30,19 +35,16 @@ class Greeting implements IGreeting {
         System.out.println("hey");
     }
 }
-
 class Emoji {
     public void printSmile() {
         System.out.println("😀");
     }
 }
-
 class Auth {
     public void authorize() {
         System.out.println("RBAC");
     }
 }
-
 class GreetingProxy implements IGreeting {
 
     private Emoji emoji = new Emoji();
@@ -69,12 +71,13 @@ class GreetingProxy implements IGreeting {
 }
 
 
+
+
 public class ProxyPatternExample {
     public static void main(String[] args) {
 
         Greeting greeting = new Greeting(); // Target
         GreetingProxy greetingProxy = new GreetingProxy(greeting); // proxy
-
         greetingProxy.hello();
 
 
