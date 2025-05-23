@@ -41,7 +41,6 @@ class TwoHundredHandler implements Handler {
 public class ChainOfResponsibilityPatternExample {
     public static void main(String[] args) {
 
-        double amount = 100;
 
         Handler fiveHundredHandler = new FiveHundredHandler();
         Handler twoHundredHandler = new TwoHundredHandler();
