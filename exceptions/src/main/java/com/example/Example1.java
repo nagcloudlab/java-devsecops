@@ -1,7 +1,14 @@
 package com.example;
 
+/*
+        Throwable
+            - Exception
+            - Error
+        checked vs un-ckecked
+ */
 
-class AccountBalanceException extends Throwable {
+
+class AccountBalanceException extends RuntimeException /*unchecked*/ {
     double currentBalance;
     String message;
 
@@ -12,14 +19,27 @@ class AccountBalanceException extends Throwable {
     }
 }
 
+class OOMError extends Error {
+}
+
+class AccountNotFoundException extends RuntimeException {
+    public AccountNotFoundException(String message) {
+        super(message);
+    }
+}
+
 //----------------------------------------------
 // Service Module ( business Logic ) ( team-1 )
 //----------------------------------------------
 
 class TransferService {
-    public void transfer(double amount, String from, String to) throws AccountBalanceException {
+    public void transfer(double amount, String from, String to) /*throws AccountBalanceException*/ {
         //...
         // Load 'from' & 'to' account details from database
+        //
+        if (from.equals("from@oksbi")) {
+            throw new AccountNotFoundException(from + " not found");
+        }
         double fromAccountBalance = 1000.00;
         // check
         if (amount > fromAccountBalance) {
@@ -29,7 +49,7 @@ class TransferService {
 }
 
 //----------------------------------------------
-// Web-Module ( request & response logic ) ( team-2 )
+// Web-Module ( request & response logic ) ( team-1 )
 //----------------------------------------------
 
 class TransferController {
@@ -49,16 +69,20 @@ class TransferController {
 
             // Prepare success response
             System.out.println("Transfer success");
-        } catch (AccountBalanceException e) {
-            //
+            // clean the resources..
+        } catch (AccountNotFoundException e) {
             // Provide user-friendy message ( via Http Response )
             // log.. for future fix
             // execute - plan-b
             // partialy handle & re-throw
-            // clean any resources ( file } db-connection ) beaing used
-            System.out.println("Transfer Failed");
-            System.out.println("Ex-" + e.currentBalance + " , " + e.message);
-
+            System.out.println("account not found issue");
+        } catch (AccountBalanceException e) {
+            //..
+            System.out.println("account balance issue");
+        } catch (Exception e) {
+            System.out.println("any other issues");
+        } finally {
+            // // clean the resources..
         }
 
     }
