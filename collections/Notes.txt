@@ -1,0 +1,83 @@
+
+
+
+
+data-structures
+------------------
+
+  => way of allocating memory for data to do CRUDSS operations ( algorithms )
+
+  types
+
+  -> primary
+  -> secondary
+
+        - linear => array,linked-list,...
+        - non-linear => tree, hashtable,....
+
+  ------------------------------------------------------
+
+
+ collection:
+
+  -> ready-to-use data-structure with cool algorithms
+
+
+------------------------------------------------------
+
+1 List
+    -> index based
+    -> keep duplicate elements
+    -> ordered
+2. Queue
+    -> FIFO
+3. Set
+    -> no-index
+    -> unique elements
+4. Map
+
+    -> with user identity, keep data in memory
+
+------------------------------------------------------
+Collection's F.W Interfaces & classes
+-------------------------------------------------------
+
+
+
+1. List
+
+    -> Vector ( dynamic-array ) ( thread-safety )
+        -> Stack ( LIFO )
+    -> ArrayList ( dynamic-array )
+    -> LinkedList ( doubly-linked-list )
+
+
+2. Queue
+
+    -> LinkedList
+    -> PriorityQueue
+    -> DeQueue
+
+
+3. Set
+
+    -> TreeSet ( b-tree ) ( natural-order )
+    -> HashSet ( hashtable ) ( un-ordered )
+    -> LinkedHashSet ( ( hashtable + DLL ) ( ordered )
+
+
+
+4. Set
+
+    -> TreeMap ( b-tree ) ( natural-order )
+    -> HashMap ( hashtable ) ( un-ordered )
+    -> LinkedHashMap ( ( hashtable + DLL ) ( ordered )
+    -> Hashtable ( thread-safe )
+
+....
+
+
+
+
+
+

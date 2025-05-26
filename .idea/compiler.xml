@@ -6,19 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="interfaces" />
-        <module name="object-patterns" />
-        <module name="inheritance-II" />
-        <module name="money-transfer-ssytem" />
-        <module name="inheritance-I" />
-        <module name="recap" />
-        <module name="access-modifiers" />
-        <module name="data-types" />
-        <module name="exceptions" />
+        <module name="collections" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="access-modifiers" target="17" />
       <module name="acessors-mutators" target="17" />
+      <module name="data-types" target="17" />
+      <module name="exceptions" target="17" />
+      <module name="inheritance-I" target="17" />
+      <module name="inheritance-II" target="17" />
+      <module name="interfaces" target="17" />
+      <module name="money-transfer-ssytem" target="17" />
+      <module name="object-patterns" target="17" />
+      <module name="recap" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
