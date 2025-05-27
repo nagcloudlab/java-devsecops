@@ -114,7 +114,7 @@
       <recent name="$PROJECT_DIR$/money-transfer-ssytem/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Q">
+  <component name="RunManager" selected="Application.Exercise1">
     <configuration name="Ex9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Ex9" />
       <module name="recap" />
@@ -128,9 +128,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HOFExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.HOFExample" />
-      <module name="lambda-expressions" />
+    <configuration name="Exercise1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Exercise1" />
+      <module name="stream-library" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
@@ -141,8 +141,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HigherOrderFunctionExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.HigherOrderFunctionExample" />
+    <configuration name="HOFExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.HOFExample" />
       <module name="lambda-expressions" />
       <extension name="coverage">
         <pattern>
@@ -194,19 +194,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Exercise1" />
       <item itemvalue="Application.HOFExample" />
-      <item itemvalue="Application.HigherOrderFunctionExample" />
       <item itemvalue="Application.MethodReference" />
       <item itemvalue="Application.Q" />
       <item itemvalue="Application.VariableCaptureInLambda" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Exercise1" />
         <item itemvalue="Application.Q" />
         <item itemvalue="Application.VariableCaptureInLambda" />
         <item itemvalue="Application.MethodReference" />
         <item itemvalue="Application.HOFExample" />
-        <item itemvalue="Application.HigherOrderFunctionExample" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748333231188</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="data processing exercise">
+      <option name="closed" value="true" />
+      <created>1748333396489</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748333396489</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
