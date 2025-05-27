@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0313739f-f923-40e8-a6a9-8b141baec263" name="Changes" comment="Hy we need Functional code in java">
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/Exercise1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/FunctionPrinciples.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/FunctionalInterfaceExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/HOFExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/HigherOrderFunctionExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/LoggerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/MethodReference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/VariableCaptureInLambda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream-library/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/Dish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/DishType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modern-java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/HowToCreateFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/HowToCreateFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/InventoryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/InventoryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/Predicate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/model/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/model/Apple.java" afterDir="false" />
+    <list default="true" id="0313739f-f923-40e8-a6a9-8b141baec263" name="Changes" comment="data processing exercise">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748326047874</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="data processing exercise">
+      <option name="closed" value="true" />
+      <created>1748333231188</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748333231188</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -321,7 +311,8 @@
     <MESSAGE value="collections overview" />
     <MESSAGE value="Exercise-1" />
     <MESSAGE value="Hy we need Functional code in java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hy we need Functional code in java" />
+    <MESSAGE value="data processing exercise" />
+    <option name="LAST_COMMIT_MESSAGE" value="data processing exercise" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
