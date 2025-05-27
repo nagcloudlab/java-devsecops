@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="stream-library" />
         <module name="collections" />
-        <module name="modern-java" />
+        <module name="lambda-expressions" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

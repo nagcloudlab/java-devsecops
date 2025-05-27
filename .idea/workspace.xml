@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0313739f-f923-40e8-a6a9-8b141baec263" name="Changes" comment="Hy we need Functional code in java">
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/Exercise1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/FunctionPrinciples.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/FunctionalInterfaceExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/HOFExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/HigherOrderFunctionExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/LoggerApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/MethodReference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/VariableCaptureInLambda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream-library/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/Dish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/DishType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modern-java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/HowToCreateFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/HowToCreateFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/InventoryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/InventoryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/Predicate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modern-java/src/main/java/com/example/model/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/lambda-expressions/src/main/java/com/example/model/Apple.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nagcloudlab&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nagcloudlab/java-devsecops&quot;,
+    &quot;accountId&quot;: &quot;a8a5135c-2019-4e4f-ae01-5287dc61e26b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2xLhBTJx8SQiEbgNjSuFglkUfFo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application (1).executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.CollnExample.executor": "Run",
+    "Application.ConstructorExecutionFlow (1).executor": "Run",
+    "Application.ConstructorExecutionFlow.executor": "Run",
+    "Application.DriveApplication.executor": "Run",
+    "Application.Ex1.executor": "Run",
+    "Application.Ex4 (1).executor": "Run",
+    "Application.Ex4 (2).executor": "Run",
+    "Application.Ex4 (3).executor": "Debug",
+    "Application.Ex4 (4).executor": "Debug",
+    "Application.Ex4 (5).executor": "Debug",
+    "Application.Ex4.executor": "Run",
+    "Application.Ex7 (1).executor": "Run",
+    "Application.Ex7.executor": "Run",
+    "Application.Ex9 (1).executor": "Run",
+    "Application.Ex9 (2).executor": "Run",
+    "Application.Ex9.executor": "Run",
+    "Application.Example.executor": "Run",
+    "Application.Example2.executor": "Run",
+    "Application.Exercise.executor": "Run",
+    "Application.Exercise1.executor": "Run",
+    "Application.FactoryExample (1).executor": "Run",
+    "Application.FactoryExample.executor": "Run",
+    "Application.FunctionPrinciples.executor": "Run",
+    "Application.FunctionalInterfaceExample.executor": "Run",
+    "Application.HOFExample.executor": "Run",
+    "Application.HashMapExample.executor": "Run",
+    "Application.HashSetExample.executor": "Run",
+    "Application.HigherOrderFunctionExample.executor": "Run",
+    "Application.HowToCreateFunction.executor": "Run",
+    "Application.InventoryApplication.executor": "Debug",
+    "Application.ListExample (1).executor": "Run",
+    "Application.ListExample.executor": "Run",
+    "Application.LoggerApp.executor": "Run",
+    "Application.MemoryAllocation.executor": "Run",
+    "Application.MethodReference.executor": "Run",
+    "Application.PrimitiveTypesExample.executor": "Run",
+    "Application.Q.executor": "Run",
+    "Application.QueueExample.executor": "Run",
+    "Application.ReferenceTypesExample.executor": "Run",
+    "Application.SetExample.executor": "Run",
+    "Application.SingletonExample (1).executor": "Run",
+    "Application.SingletonExample (2).executor": "Run",
+    "Application.SingletonExample (3).executor": "Run",
+    "Application.SingletonExample.executor": "Run",
+    "Application.StackExample.executor": "Run",
+    "Application.TreeMapExample.executor": "Run",
+    "Application.TypeCastingExample.executor": "Run",
+    "Application.VariableCaptureInLambda.executor": "Run",
+    "Maven.recap [compile].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/nag/java-devsecops/stream-library/src/main/java/com/example",
+    "last_opened_file_path": "/Users/nag/java-devsecops",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "inlay.hints"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/money-transfer-ssytem/src/main/java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Q">
+    <configuration name="Ex9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Ex9" />
+      <module name="recap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HOFExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.HOFExample" />
+      <module name="lambda-expressions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HigherOrderFunctionExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.HigherOrderFunctionExample" />
+      <module name="lambda-expressions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MethodReference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.MethodReference" />
+      <module name="lambda-expressions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Q" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Q" />
+      <module name="lambda-expressions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VariableCaptureInLambda" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.VariableCaptureInLambda" />
+      <module name="lambda-expressions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.HOFExample" />
+      <item itemvalue="Application.HigherOrderFunctionExample" />
+      <item itemvalue="Application.MethodReference" />
+      <item itemvalue="Application.Q" />
+      <item itemvalue="Application.VariableCaptureInLambda" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Q" />
+        <item itemvalue="Application.VariableCaptureInLambda" />
+        <item itemvalue="Application.MethodReference" />
+        <item itemvalue="Application.HOFExample" />
+        <item itemvalue="Application.HigherOrderFunctionExample" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0313739f-f923-40e8-a6a9-8b141baec263" name="Changes" comment="" />
+      <created>1747723125595</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747723125595</updated>
+    </task>
+    <task id="LOCAL-00001" summary="refactored projects">
+      <option name="closed" value="true" />
+      <created>1747723788024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747723788024</updated>
+    </task>
+    <task id="LOCAL-00002" summary="access specifiers">
+      <option name="closed" value="true" />
+      <created>1747726424959</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747726424959</updated>
+    </task>
+    <task id="LOCAL-00003" summary="reacap &amp; builder pattern">
+      <option name="closed" value="true" />
+      <created>1747900126302</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747900126302</updated>
+    </task>
+    <task id="LOCAL-00004" summary="factory pattern">
+      <option name="closed" value="true" />
+      <created>1747902280506</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747902280506</updated>
+    </task>
+    <task id="LOCAL-00005" summary="exceptions">
+      <option name="closed" value="true" />
+      <created>1747988752794</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747988752794</updated>
+    </task>
+    <task id="LOCAL-00006" summary="collections overview">
+      <option name="closed" value="true" />
+      <created>1748246856807</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748246856807</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Exercise-1">
+      <option name="closed" value="true" />
+      <created>1748320606546</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1748320606546</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Hy we need Functional code in java">
+      <option name="closed" value="true" />
+      <created>1748323920868</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748323920868</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Hy we need Functional code in java">
+      <option name="closed" value="true" />
+      <created>1748326047874</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1748326047874</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactored projects" />
+    <MESSAGE value="access specifiers" />
+    <MESSAGE value="reacap &amp; builder pattern" />
+    <MESSAGE value="factory pattern" />
+    <MESSAGE value="exceptions" />
+    <MESSAGE value="collections overview" />
+    <MESSAGE value="Exercise-1" />
+    <MESSAGE value="Hy we need Functional code in java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hy we need Functional code in java" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/recap/src/main/java/com/example/Ex4.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -3,8 +3,8 @@ package com.example;
 import com.example.model.Apple;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class InventoryApplication {
 
@@ -30,7 +30,7 @@ public class InventoryApplication {
         // Req-1: filter all 'red' apples from inventory to new 'list'
 
         // Local Inner Class ( Named )
-        class GreenApplePredicate implements Predicate {
+        class GreenApplePredicate implements Predicate<Apple> {
             @Override
             public boolean test(Apple apple) {
                 return apple.getColor().equals("red");
@@ -39,7 +39,7 @@ public class InventoryApplication {
         Predicate greenApplePredicate1 = new GreenApplePredicate();
 
         // Local Inner Class ( Anonymous )
-        Predicate greenApplePredicate2 = new Predicate() {
+        Predicate greenApplePredicate2 = new Predicate<Apple>() {
             @Override
             public boolean test(Apple apple) {
                 return apple.getColor().equals("red");
@@ -49,7 +49,7 @@ public class InventoryApplication {
         // Function
         // why we need function?
         // we can write concise code
-        Predicate greenApplePredicate3 = apple -> apple.getColor().equals("green");
+        Predicate<Apple> greenApplePredicate3 = apple -> apple.getColor().equals("green");
         System.out.println(
                 //filterRedApples(appleInventory)
                 //filterApplesByColor(appleInventory, "red")
@@ -72,11 +72,6 @@ public class InventoryApplication {
         );
 
 
-
-        Wheel wheel=new MRFWheel();
-        wheel=new CEATWheel();
-
-
     }
 
 
@@ -90,7 +85,7 @@ public class InventoryApplication {
     // - by function params ( recommened )
 
     // implementation i.e How to filter
-    private static List<Apple> filterApples(List<Apple> appleInventory, Predicate predicate) {
+    private static List<Apple> filterApples(List<Apple> appleInventory, Predicate<Apple> predicate) {
         List<Apple> filteredApples = new ArrayList<>();
         for (Apple apple : appleInventory) {
             if (predicate.test(apple)) {
@@ -151,6 +146,3 @@ public class InventoryApplication {
 
 
 
-interface  Wheel{}
-class MRFWheel implements Wheel{}
-class CEATWheel implements Wheel{}
