@@ -71,6 +71,12 @@ public class InventoryApplication {
                 filterApples(appleInventory, apple -> apple.getColor().equals("red") && apple.getWeight() == 1.5)
         );
 
+
+
+        Wheel wheel=new MRFWheel();
+        wheel=new CEATWheel();
+
+
     }
 
 
@@ -144,3 +150,7 @@ public class InventoryApplication {
 }
 
 
+
+interface  Wheel{}
+class MRFWheel implements Wheel{}
+class CEATWheel implements Wheel{}
