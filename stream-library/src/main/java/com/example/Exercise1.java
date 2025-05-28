@@ -45,7 +45,7 @@ public class Exercise1 {
                 .stream()
                 .filter(dish -> dish.getCalories() < 400) // step-1 : filter dish if calories < 400
                 .sorted(Comparator.comparing(Dish::getCalories)) // step-2 : sort low cal dishes by calories
-                .map(Dish::getName)
+                .map(Dish::getName) // step-3 : map low cal dishes to names
                 .collect(Collectors.toList());
     }
 

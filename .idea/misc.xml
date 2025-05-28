@@ -15,10 +15,8 @@
         <option value="$PROJECT_DIR$/object-patterns/pom.xml" />
         <option value="$PROJECT_DIR$/recap/pom.xml" />
         <option value="$PROJECT_DIR$/exceptions/pom.xml" />
-        <option value="$PROJECT_DIR$/collections/pom.xml" />
         <option value="$PROJECT_DIR$/modern-java/pom.xml" />
         <option value="$PROJECT_DIR$/stream-library/pom.xml" />
-        <option value="$PROJECT_DIR$/lambda-expressions/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

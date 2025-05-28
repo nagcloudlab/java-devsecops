@@ -7,18 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="stream-library" />
-        <module name="collections" />
-        <module name="lambda-expressions" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="access-modifiers" target="17" />
       <module name="acessors-mutators" target="17" />
+      <module name="collections" target="17" />
       <module name="data-types" target="17" />
       <module name="exceptions" target="17" />
       <module name="inheritance-I" target="17" />
       <module name="inheritance-II" target="17" />
       <module name="interfaces" target="17" />
+      <module name="lambda-expressions" target="17" />
       <module name="money-transfer-ssytem" target="17" />
       <module name="object-patterns" target="17" />
       <module name="recap" target="17" />
