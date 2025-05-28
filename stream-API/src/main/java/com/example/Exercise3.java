@@ -34,7 +34,16 @@ public class Exercise3 {
 
         // way-2: Functional style
         Stream<String> stream = Files.lines(Path.of("/Users/nag/java-devsecops/stream-library/report.csv"));
-        // TODO
+
+        Map<String, Double> departmentSalaryMapFunctional = stream
+                //.skip(1) // Skip header line
+                .map(csvLine -> csvLine.split(","))
+                .collect(java.util.stream.Collectors.groupingBy(
+                        tokens -> tokens[1],
+                        java.util.stream.Collectors.summingDouble(tokens -> Double.parseDouble(tokens[2]))
+                ));
+        stream.close();
+        System.out.println("Functional style department salary map: " + departmentSalaryMapFunctional);
 
 
     }

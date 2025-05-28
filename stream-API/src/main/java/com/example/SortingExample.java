@@ -2,7 +2,7 @@ package com.example;
 
 import java.util.List;
 
-public class Sorting_Example {
+public class SortingExample {
 
     public static void main(String[] args) {
 

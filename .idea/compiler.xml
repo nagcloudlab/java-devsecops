@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="stream-library" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +21,7 @@
       <module name="money-transfer-ssytem" target="17" />
       <module name="object-patterns" target="17" />
       <module name="recap" target="17" />
+      <module name="stream-API" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

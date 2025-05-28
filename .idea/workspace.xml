@@ -4,11 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0313739f-f923-40e8-a6a9-8b141baec263" name="Changes" comment="streams exercise">
-      <change afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise3.java" afterDir="false" />
+    <list default="true" id="0313739f-f923-40e8-a6a9-8b141baec263" name="Changes" comment="streams exercise3">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream-library/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/stream-library/report.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/report.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Common_Mistake_With_Stream.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Common_Mistake_With_Stream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Exercise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Exercise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Exercise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Exercise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Filtering_Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Filtering_Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/How_To_Create_Stream.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/How_To_Create_Stream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/How_To_Work_Stream.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/How_To_Work_Stream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Mapping_Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Mapping_Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Primitive_Stream_Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Primitive_Stream_Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Sorting_Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/SortingExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/Terminal_Operation_Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/Terminal_Operation_Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/model/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/DishType.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/model/DishType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/model/Trader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/src/main/java/com/example/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/stream-API/src/main/java/com/example/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stream-library/target/classes/META-INF/stream-library.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +147,7 @@
   <component name="RunManager" selected="Application.Exercise3">
     <configuration name="Exercise2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Exercise2" />
-      <module name="stream-library" />
+      <module name="stream-API" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
@@ -143,7 +160,7 @@
     </configuration>
     <configuration name="Exercise3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Exercise3" />
-      <module name="stream-library" />
+      <module name="stream-API" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
@@ -156,7 +173,7 @@
     </configuration>
     <configuration name="Primitive_Stream_Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Primitive_Stream_Example" />
-      <module name="stream-library" />
+      <module name="stream-API" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
@@ -169,7 +186,7 @@
     </configuration>
     <configuration name="Sorting_Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Sorting_Example" />
-      <module name="stream-library" />
+      <module name="stream-API" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
@@ -182,7 +199,7 @@
     </configuration>
     <configuration name="Terminal_Operation_Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Terminal_Operation_Example" />
-      <module name="stream-library" />
+      <module name="stream-API" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
@@ -323,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748411233614</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="streams exercise3">
+      <option name="closed" value="true" />
+      <created>1748414367736</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1748414367736</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -338,7 +363,8 @@
     <MESSAGE value="data processing exercise" />
     <MESSAGE value="data processing with stream API" />
     <MESSAGE value="streams exercise" />
-    <option name="LAST_COMMIT_MESSAGE" value="streams exercise" />
+    <MESSAGE value="streams exercise3" />
+    <option name="LAST_COMMIT_MESSAGE" value="streams exercise3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
