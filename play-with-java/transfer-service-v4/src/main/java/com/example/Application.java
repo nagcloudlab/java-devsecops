@@ -1,5 +1,6 @@
 package com.example;
 
+import org.example.NPCIAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -12,6 +13,9 @@ import com.example.service.TransferService;
 
 @Configuration
 @EnableAutoConfiguration
+//@Import(
+//        NPCIAutoConfiguration.class
+//)
 @ComponentScan(basePackages = "com.example")
 public class Application {
     public static void main(String[] args) {
@@ -34,8 +38,11 @@ public class Application {
         // run phase
         //-------------------------------------------------
 
-        TransferService transferService = applicationContext.getBean("transferService", TransferService.class);
-        transferService.transfer("1234567890", "0987654321", 100.0);
+        //TransferService transferService = applicationContext.getBean("transferService", TransferService.class);
+        //transferService.transfer("1234567890", "0987654321", 100.0);
+
+        String bean1 = applicationContext.getBean("bean1", String.class);
+        System.out.println(bean1);
 
 
         System.out.println();
