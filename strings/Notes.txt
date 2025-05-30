@@ -1,0 +1,13 @@
+
+
+
+
+- compile-time known strings must be created using string literals -> ""
+-> compile-time known strings always placed string-table ( hash table )
+-> compile-time known strings always unique
+-> we can compare them by == & equals
+
+
+-> runtime-strings are heap objects
+-> end up in with duplicates
+-> to avoid duplicates create with 'intern' method
