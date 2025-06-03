@@ -1,7 +1,8 @@
-package main;
+package com.example.main;
 public class CustomerHarness {
 	
 	public static void main(String[] args)  {
+
 		CustomerManager cm = new CustomerManager();
 		GenerateCustomerTask generateTask = new GenerateCustomerTask(cm);
 		ProcessCustomerTask processTask = new ProcessCustomerTask(cm);
@@ -10,6 +11,7 @@ public class CustomerHarness {
 			Thread t = new Thread(generateTask);
 			t.start();
 		}
+
 		Thread t = new Thread(processTask);
 		t.start();
 		

@@ -1,12 +1,12 @@
-package main;
+package com.example.main;
 
 import java.util.Optional;
 import java.util.UUID;
 
 public class ProcessCustomerTask implements Runnable {
 
-	
-private CustomerManager cm;
+
+	private CustomerManager cm;
 	
 	public ProcessCustomerTask(CustomerManager cm) {
 		this.cm = cm;

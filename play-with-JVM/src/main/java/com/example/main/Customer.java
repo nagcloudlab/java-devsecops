@@ -1,4 +1,4 @@
-package main;
+package com.example.main;
 public class Customer {
 
 	private int id;

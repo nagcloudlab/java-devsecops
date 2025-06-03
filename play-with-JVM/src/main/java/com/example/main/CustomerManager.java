@@ -1,4 +1,4 @@
-package main;
+package com.example.main;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class CustomerManager {
 
-	private List<Customer> customers = new ArrayList<Customer>();
+	private List<Customer> customers = new ArrayList<Customer>(); //  Shared resource
 	private int nextAvalailbleId = 0;
 	
 	public  void addCustomer(Customer customer) {

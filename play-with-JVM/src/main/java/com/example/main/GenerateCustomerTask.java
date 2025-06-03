@@ -1,4 +1,4 @@
-package main;
+package com.example.main;
 import java.util.UUID;
 
 

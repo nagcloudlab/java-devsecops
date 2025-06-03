@@ -1,0 +1,13 @@
+
+
+
+
+JVM_app with container
+
+startup time: 1.009s
+memory : 86m
+
+native_app with container
+
+0.033s.
+memory : 4m
