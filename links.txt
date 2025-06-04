@@ -3,3 +3,7 @@ https://nagcloudlab.notion.site/java-devsecops-1f85bab9bf8780e7bb92eb3b298c058a?
 
 JVM
 https://nagcloudlab.notion.site/Memory-Management-2055bab9bf8780d68e77d710c49b947e?source=copy_link
+
+
+DevSecOps
+https://nagcloudlab.notion.site/npci-java-dev-sec-ops-2005bab9bf8780c982aced1d68354188?source=copy_link
