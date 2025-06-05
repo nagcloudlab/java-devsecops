@@ -32,3 +32,24 @@ sudo systemctl status docker
 sudo usermod -aG docker ${USER}
 docker version
 ```
+
+create postgres container
+
+```bash
+docker run --name postgres -e POSTGRES_PASSWORD=postgres -d -p 54322:5432 postgres
+docker container ls
+docker logs postgres
+docker exec -it postgres psql -U postgres
+
+
+create table accounts (
+    number VARCHAR(20) PRIMARY KEY,
+    balance NUMERIC(10,2) NOT NULL
+);
+
+insert into accounts (number, balance) values ('1234567890', 1000.00);
+insert into accounts (number, balance) values ('0987654321', 500.00);
+select * from accounts;
+
+```
+
