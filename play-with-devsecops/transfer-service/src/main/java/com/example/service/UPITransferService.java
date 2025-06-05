@@ -7,6 +7,7 @@ import com.example.repository.MockAccountRepository;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ExecutorService;
@@ -22,8 +23,8 @@ public class UPITransferService implements TransferService {
 
     private AccountRepository accountRepository;
 
-    // @Autowired
-    public UPITransferService(AccountRepository accountRepository) {
+    @Autowired
+    public UPITransferService(@Qualifier("jdbcAccountRepository") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
         logger.info("UPITransferService initialized.");
     }
@@ -38,8 +39,9 @@ public class UPITransferService implements TransferService {
             Account toAccount = accountRepository.findByAccountNumber(toAccountNumber);
 
             // Always lock accounts in consistent order to avoid deadlock
-            Account first = fromAccount.getNumber().compareTo(toAccount.getNumber()) < 0 ? fromAccount : toAccount;
-            Account second = first == fromAccount ? toAccount : fromAccount;
+            // Account first = fromAccount.getNumber().compareTo(toAccount.getNumber()) < 0
+            // ? fromAccount : toAccount;
+            // Account second = first == fromAccount ? toAccount : fromAccount;
 
             // Lock firstLock = first.getLock();
             // Lock secondLock = second.getLock();

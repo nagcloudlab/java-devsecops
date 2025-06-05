@@ -4,4 +4,5 @@ com/example/TrafficSimulator.class
 com/example/service/UPITransferService.class
 com/example/Application.class
 com/example/repository/AccountRepository.class
+com/example/repository/JdbcAccountRepository.class
 com/example/model/Account.class
