@@ -34,6 +34,20 @@
             <artifactId>calculator-util</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- lombok dependency -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+            <scope>provided</scope>
+        </dependency>
+
+         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -1,8 +1,9 @@
 
 package com.example;
 
+import com.example.dto.TransferRequest;
+import com.example.dto.TransferResponse;
 import com.example.service.TransferService;
-import com.example.Calculator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -33,9 +34,12 @@ public class TrafficSimulator {
             System.out.printf("🔁 Simulating transfer #%d: %s -> %s | ₹%.2f\n", i + 1, from, to, amount);
             Calculator calc = new Calculator();
             System.out.println("Addition: " + calc.add(5, 3));
-            transferService.transfer(from, to, amount);
+            TransferRequest transferRequest = new TransferRequest(from, to, amount);
+            TransferResponse response = transferService.transfer(transferRequest);
 
-            // Thread.sleep(300 + RANDOM.nextInt(700)); // Sleep 300–1000ms between
+            System.out.println(response);
+
+            Thread.sleep(300 + RANDOM.nextInt(700)); // Sleep 300–1000ms between
             // transfers
         }
 

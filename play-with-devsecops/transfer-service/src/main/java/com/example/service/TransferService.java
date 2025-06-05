@@ -1,5 +1,8 @@
 package com.example.service;
 
+import com.example.dto.TransferRequest;
+import com.example.dto.TransferResponse;
+
 public interface TransferService {
-    void transfer(String fromAccountNumber, String toAccountNumber, double amount);
+    TransferResponse transfer(TransferRequest transferRequest);
 }
