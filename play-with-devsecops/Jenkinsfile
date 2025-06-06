@@ -12,6 +12,13 @@ pipeline {
                     // Example build step
                     echo 'Building the project...'
                     sh 'mvn -v'
+
+                }
+                dir('play-with-devsecops') {
+                    // Example step to list files in the src directory
+                    sh 'ls -l'
+                    // Example step to run Maven build
+                    sh 'mvn clean package'
                 }
             }
         }
