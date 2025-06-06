@@ -12,9 +12,9 @@ public class PostgresConnectionFactory {
         try {
             // Create and return a new connection to the database
             return java.sql.DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/your_database",
+                    "jdbc:postgresql://localhost:54322/postgres",
                     "postgres",
-                    System.getenv("POSTGRES_PASSWORD"));
+                    System.getProperty("POSTGRES_PASSWORD"));
         } catch (Exception e) {
             throw new RuntimeException("Error connecting to the database", e);
         }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TrafficSimulator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">transfer-service</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">TrafficSimulator.java</span></div><h1>TrafficSimulator.java</h1><pre class="source lang-java linenums">
+package com.example;
+
+import com.example.dto.TransferRequest;
+import com.example.dto.TransferResponse;
+import com.example.service.TransferService;
+
+import org.slf4j.Logger;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.Random;
+
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan(basePackages = &quot;com.example&quot;)
+<span class="fc" id="L20">public class TrafficSimulator {</span>
+
+<span class="fc" id="L22">    private static Logger logger = org.slf4j.LoggerFactory.getLogger(&quot;transfer-service&quot;);</span>
+
+<span class="fc" id="L24">    private static final String[] ACCOUNTS = { &quot;1234567890&quot;, &quot;0987654321&quot; };</span>
+    @SuppressWarnings(&quot;java:S2245&quot;)
+<span class="fc" id="L26">    private static final Random RANDOM = new Random();</span>
+
+    public static void main(String[] args) throws InterruptedException {
+
+<span class="nc" id="L30">        ConfigurableApplicationContext context = SpringApplication.run(TrafficSimulator.class, args);</span>
+<span class="nc" id="L31">        TransferService transferService = context.getBean(TransferService.class);</span>
+
+<span class="nc" id="L33">        System.out.println(&quot;📡 Starting simulated live traffic...\n&quot;);</span>
+
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for (int i = 0; i &lt; 0; i++) {</span>
+            String from;
+            String to;
+            do {
+<span class="nc" id="L39">                from = ACCOUNTS[RANDOM.nextInt(ACCOUNTS.length)];</span>
+<span class="nc" id="L40">                to = ACCOUNTS[RANDOM.nextInt(ACCOUNTS.length)];</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            } while (from.equals(to));</span>
+
+<span class="nc" id="L43">            double amount = 100 + RANDOM.nextDouble(500); // 100 to 600</span>
+<span class="nc" id="L44">            TransferRequest transferRequest = new TransferRequest(from, to, amount);</span>
+<span class="nc" id="L45">            TransferResponse response = transferService.transfer(transferRequest);</span>
+
+<span class="nc" id="L47">            logger.info(&quot;Transfer response: {}&quot;, response);</span>
+
+            // Simulate a delay between requests
+<span class="nc" id="L50">            Thread.sleep(RANDOM.nextInt(1000) + 500); // 500 to 1500 ms</span>
+
+        }
+
+<span class="nc" id="L54">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

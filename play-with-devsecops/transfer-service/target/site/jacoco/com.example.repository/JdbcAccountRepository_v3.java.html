@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JdbcAccountRepository_v3.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">transfer-service</a> &gt; <a href="index.source.html" class="el_package">com.example.repository</a> &gt; <span class="el_source">JdbcAccountRepository_v3.java</span></div><h1>JdbcAccountRepository_v3.java</h1><pre class="source lang-java linenums">package com.example.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.sql.DataSource;
+
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.example.model.Account;
+
+/*
+ * 
+ * steps to use JDBC api:
+ * 
+ * 1. Load the JDBC driver
+ * 2. Establish a connection to the database
+ * 3. Create a statement or prepared statement with SQL query
+ * 4. Execute the query
+ * 5. Process the result set (if applicable)
+ * 6. Close the resources (result set, statement, connection)
+ * 7. Handle exceptions
+ * 8. Make sure you satisfy the ACID properties of transactions
+ * 
+ */
+
+@Repository
+@Qualifier(&quot;jdbcAccountRepository&quot;)
+public class JdbcAccountRepository_v3 implements AccountRepository {
+
+<span class="fc" id="L36">    private static Logger logger = org.slf4j.LoggerFactory.getLogger(&quot;transfer-service&quot;);</span>
+
+    private DataSource dataSource;
+    private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+<span class="fc" id="L42">    public JdbcAccountRepository_v3(DataSource dataSource) {</span>
+<span class="fc" id="L43">        this.dataSource = dataSource;</span>
+<span class="fc" id="L44">        this.jdbcTemplate = new JdbcTemplate(dataSource);</span>
+<span class="fc" id="L45">    }</span>
+
+    @Override
+    public Account findByAccountNumber(String number) {
+<span class="nc" id="L49">        String sql = &quot;SELECT number, balance FROM accounts WHERE number = ?&quot;;</span>
+<span class="nc" id="L50">        Account account = jdbcTemplate.queryForObject(sql, (rs, rowNum) -&gt; {</span>
+<span class="nc" id="L51">            Account acc = new Account();</span>
+<span class="nc" id="L52">            acc.setNumber(rs.getString(&quot;number&quot;));</span>
+<span class="nc" id="L53">            acc.setBalance(rs.getDouble(&quot;balance&quot;));</span>
+<span class="nc" id="L54">            return acc;</span>
+        }, number);
+
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        if (account == null) {</span>
+<span class="nc" id="L58">            logger.warn(&quot;Account with number {} not found&quot;, number);</span>
+        }
+<span class="nc" id="L60">        return account;</span>
+    }
+
+    @Override
+    public void updateAccount(Account account) {
+<span class="nc" id="L65">        String sql = &quot;UPDATE accounts SET balance = ? WHERE number = ?&quot;;</span>
+<span class="nc" id="L66">        int rowsAffected = jdbcTemplate.update(sql, account.getBalance(), account.getNumber());</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (rowsAffected == 0) {</span>
+<span class="nc" id="L68">            logger.warn(&quot;No account found with number {}&quot;, account.getNumber());</span>
+        } else {
+<span class="nc" id="L70">            logger.info(&quot;Account {} updated successfully&quot;, account.getNumber());</span>
+        }
+<span class="nc" id="L72">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,15 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+transfer-service,com.example.dto,TransferRequest,135,24,24,0,2,5,17,7,5,7
+transfer-service,com.example.dto,TransferResponse,0,26,0,0,0,12,0,6,0,6
+transfer-service,com.example.model,Account,70,22,10,0,14,10,11,5,6,5
+transfer-service,com.example,TrafficSimulator,65,22,4,0,13,4,3,2,1,2
+transfer-service,com.example.exception,DataUpdateException,9,4,0,0,4,2,2,1,2,1
+transfer-service,com.example.exception,DataAccessException,9,4,0,0,4,2,2,1,2,1
+transfer-service,com.example.service,UPITransferService,18,118,2,2,4,25,2,3,0,3
+transfer-service,com.example.api,TransferController,17,3,2,0,4,1,2,1,1,1
+transfer-service,com.example.repository,MockAccountRepository,14,28,0,0,3,5,2,1,2,1
+transfer-service,com.example.repository,JpaAccountRepository,0,16,0,0,0,4,0,3,0,3
+transfer-service,com.example.repository,PostgresConnectionFactory,7,6,0,0,2,2,0,1,0,1
+transfer-service,com.example.repository,JdbcAccountRepository_v3,73,16,4,0,15,5,5,2,3,2
+transfer-service,com.example.repository,JdbcAccountRepository_v2,119,0,6,0,40,0,7,0,4,0
+transfer-service,com.example.repository,JdbcAccountRepository_v1,112,0,6,0,38,0,7,0,4,0

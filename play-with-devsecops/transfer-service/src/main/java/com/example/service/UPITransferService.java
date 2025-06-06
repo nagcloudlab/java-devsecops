@@ -5,12 +5,12 @@ import com.example.dto.TransferRequest;
 import com.example.dto.TransferResponse;
 import com.example.model.Account;
 import com.example.repository.AccountRepository;
-import com.example.repository.MockAccountRepository;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component("transferService")
 public class UPITransferService implements TransferService {
@@ -20,12 +20,13 @@ public class UPITransferService implements TransferService {
     private AccountRepository accountRepository;
 
     @Autowired
-    public UPITransferService(@Qualifier("jdbcAccountRepository") AccountRepository accountRepository) {
+    public UPITransferService(@Qualifier("jpaAccountRepository") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
         logger.info("UPITransferService initialized.");
     }
 
     @Override
+    @Transactional(transactionManager = "transactionManager", rollbackFor = { RuntimeException.class })
     public TransferResponse transfer(TransferRequest transferRequest) {
         // accountRepository = new MockAccountRepository();
         logger.info("Thread [{}] started transfer", Thread.currentThread().getName());
@@ -53,8 +54,8 @@ public class UPITransferService implements TransferService {
         toAccount.setBalance(toAccount.getBalance() + amount);
         logger.info("Added {} to {}. New balance: {}", amount, toAccountNumber, toAccount.getBalance());
 
-        accountRepository.save(fromAccount);
-        accountRepository.save(toAccount);
+        accountRepository.updateAccount(fromAccount);
+        accountRepository.updateAccount(toAccount);
         logger.info("Thread [{}] completed transfer", Thread.currentThread().getName());
 
         TransferResponse transferResponse = new TransferResponse();

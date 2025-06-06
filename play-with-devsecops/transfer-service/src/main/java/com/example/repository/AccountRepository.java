@@ -5,5 +5,5 @@ import com.example.model.Account;
 public interface AccountRepository {
     Account findByAccountNumber(String number);
 
-    void save(Account account);
+    void updateAccount(Account account);
 }

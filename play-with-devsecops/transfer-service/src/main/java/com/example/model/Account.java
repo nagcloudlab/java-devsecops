@@ -1,15 +1,21 @@
 
 package com.example.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.concurrent.locks.ReentrantLock; // Lock Api
 
+@Entity
+@Table(name = "accounts")
 public class Account implements Comparable<Account>, Serializable {
 
+    @Id
     private String number;
     private double balance;
-    private final ReentrantLock lock = new ReentrantLock();
 
     public Account(String number, double balance) {
         this.number = number;
@@ -17,6 +23,14 @@ public class Account implements Comparable<Account>, Serializable {
     }
 
     public Account() {
+    }
+
+    public Account(String number) {
+        this.number = number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getNumber() {
@@ -31,9 +45,6 @@ public class Account implements Comparable<Account>, Serializable {
         this.balance = balance;
     }
 
-    public ReentrantLock getLock() {
-        return lock;
-    }
 
     @Override
     public String toString() {

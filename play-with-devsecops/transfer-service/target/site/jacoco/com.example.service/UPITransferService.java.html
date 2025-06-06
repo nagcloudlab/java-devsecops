@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UPITransferService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">transfer-service</a> &gt; <a href="index.source.html" class="el_package">com.example.service</a> &gt; <span class="el_source">UPITransferService.java</span></div><h1>UPITransferService.java</h1><pre class="source lang-java linenums">
+package com.example.service;
+
+import com.example.dto.TransferRequest;
+import com.example.dto.TransferResponse;
+import com.example.model.Account;
+import com.example.repository.AccountRepository;
+
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+@Component(&quot;transferService&quot;)
+public class UPITransferService implements TransferService {
+
+<span class="fc" id="L18">    private static Logger logger = org.slf4j.LoggerFactory.getLogger(&quot;transfer-service&quot;);</span>
+
+    private AccountRepository accountRepository;
+
+    @Autowired
+<span class="fc" id="L23">    public UPITransferService(@Qualifier(&quot;jpaAccountRepository&quot;) AccountRepository accountRepository) {</span>
+<span class="fc" id="L24">        this.accountRepository = accountRepository;</span>
+<span class="fc" id="L25">        logger.info(&quot;UPITransferService initialized.&quot;);</span>
+<span class="fc" id="L26">    }</span>
+
+    @Override
+    @Transactional(transactionManager = &quot;transactionManager&quot;, rollbackFor = { RuntimeException.class })
+    public TransferResponse transfer(TransferRequest transferRequest) {
+        // accountRepository = new MockAccountRepository();
+<span class="fc" id="L32">        logger.info(&quot;Thread [{}] started transfer&quot;, Thread.currentThread().getName());</span>
+
+<span class="fc" id="L34">        String fromAccountNumber = transferRequest.getFromAccountNumber();</span>
+<span class="fc" id="L35">        String toAccountNumber = transferRequest.getToAccountNumber();</span>
+<span class="fc" id="L36">        double amount = transferRequest.getAmount();</span>
+
+<span class="fc" id="L38">        Account fromAccount = accountRepository.findByAccountNumber(fromAccountNumber);</span>
+<span class="fc" id="L39">        Account toAccount = accountRepository.findByAccountNumber(toAccountNumber);</span>
+
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if (fromAccount == null) {</span>
+<span class="nc" id="L42">            logger.error(&quot;From account {} not found&quot;, fromAccountNumber);</span>
+<span class="nc" id="L43">            throw new IllegalArgumentException(&quot;From account not found&quot;);</span>
+        }
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">        if (toAccount == null) {</span>
+<span class="nc" id="L46">            logger.error(&quot;To account {} not found&quot;, toAccountNumber);</span>
+<span class="nc" id="L47">            throw new IllegalArgumentException(&quot;To account not found&quot;);</span>
+        }
+
+<span class="fc" id="L50">        fromAccount.setBalance(fromAccount.getBalance() - amount);</span>
+<span class="fc" id="L51">        logger.info(&quot;Deducted {} from {}. New balance: {}&quot;, amount, fromAccountNumber,</span>
+<span class="fc" id="L52">                fromAccount.getBalance());</span>
+
+<span class="fc" id="L54">        toAccount.setBalance(toAccount.getBalance() + amount);</span>
+<span class="fc" id="L55">        logger.info(&quot;Added {} to {}. New balance: {}&quot;, amount, toAccountNumber, toAccount.getBalance());</span>
+
+<span class="fc" id="L57">        accountRepository.updateAccount(fromAccount);</span>
+<span class="fc" id="L58">        accountRepository.updateAccount(toAccount);</span>
+<span class="fc" id="L59">        logger.info(&quot;Thread [{}] completed transfer&quot;, Thread.currentThread().getName());</span>
+
+<span class="fc" id="L61">        TransferResponse transferResponse = new TransferResponse();</span>
+<span class="fc" id="L62">        transferResponse.setStatus(&quot;success&quot;);</span>
+<span class="fc" id="L63">        transferResponse.setMessage(&quot;Transfer completed successfully&quot;);</span>
+
+<span class="fc" id="L65">        return transferResponse;</span>
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JdbcAccountRepository_v1.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">transfer-service</a> &gt; <a href="index.source.html" class="el_package">com.example.repository</a> &gt; <span class="el_source">JdbcAccountRepository_v1.java</span></div><h1>JdbcAccountRepository_v1.java</h1><pre class="source lang-java linenums">package com.example.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.sql.DataSource;
+
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
+import com.example.model.Account;
+
+/*
+ * 
+ * steps to use JDBC api:
+ * 
+ * 1. Load the JDBC driver
+ * 2. Establish a connection to the database
+ * 3. Create a statement or prepared statement with SQL query
+ * 4. Execute the query
+ * 5. Process the result set (if applicable)
+ * 6. Close the resources (result set, statement, connection)
+ * 7. Handle exceptions
+ * 8. Make sure you satisfy the ACID properties of transactions
+ * 
+ */
+
+// @Repository
+@Qualifier(&quot;jdbcAccountRepository&quot;)
+<span class="nc" id="L32">public class JdbcAccountRepository_v1 implements AccountRepository {</span>
+
+<span class="nc" id="L34">    private static Logger logger = org.slf4j.LoggerFactory.getLogger(&quot;transfer-service&quot;);</span>
+
+    @Override
+    public Account findByAccountNumber(String number) {
+
+<span class="nc" id="L39">        PreparedStatement preparedStatement = null;</span>
+<span class="nc" id="L40">        try (Connection connection = PostgresConnectionFactory.getConnection()) {</span>
+            // 3 Create a statement or prepared statement with SQL query
+<span class="nc" id="L42">            String sql = &quot;SELECT number, balance FROM accounts WHERE number = ?&quot;;</span>
+<span class="nc" id="L43">            preparedStatement = connection.prepareStatement(sql);</span>
+            // Set the parameter for the prepared statement
+<span class="nc" id="L45">            preparedStatement.setString(1, number);</span>
+            // 4. Execute the query
+<span class="nc" id="L47">            ResultSet resultSet = preparedStatement.executeQuery();</span>
+            // 5. Process the result set (if applicable)
+<span class="nc" id="L49">            Account account = new Account();</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">            if (resultSet.next()) {</span>
+<span class="nc" id="L51">                account.setNumber((resultSet.getString(&quot;number&quot;)));</span>
+<span class="nc" id="L52">                account.setBalance(resultSet.getDouble(&quot;balance&quot;));</span>
+            } else {
+                // Handle the case where no account is found
+<span class="nc" id="L55">                account = null;</span>
+            }
+            // 6. Close the resources (result set, statement, connection)
+<span class="nc" id="L58">            return account;</span>
+<span class="nc" id="L59">        } catch (Exception e) {</span>
+<span class="nc" id="L60">            logger.error(&quot;Error finding account by number: {}&quot;, e.getMessage());</span>
+<span class="nc" id="L61">            return null; // Handle exceptions appropriately</span>
+        } finally {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">            if (preparedStatement != null) {</span>
+                try {
+<span class="nc" id="L65">                    preparedStatement.close();</span>
+<span class="nc" id="L66">                } catch (Exception e) {</span>
+<span class="nc" id="L67">                    logger.error(&quot;Error closing prepared statement: {}&quot;, e.getMessage());</span>
+<span class="nc" id="L68">                }</span>
+            }
+        }
+
+    }
+
+    @Override
+    public void updateAccount(Account account) {
+
+<span class="nc" id="L77">        PreparedStatement preparedStatement = null;</span>
+<span class="nc" id="L78">        try (Connection connection = PostgresConnectionFactory.getConnection()) {</span>
+            // 3. Create a statement or prepared statement with SQL query
+<span class="nc" id="L80">            String sql = &quot;UPDATE accounts SET balance = ? WHERE number = ?&quot;;</span>
+<span class="nc" id="L81">            preparedStatement = connection.prepareStatement(sql);</span>
+            // Set the parameters for the prepared statement
+<span class="nc" id="L83">            preparedStatement.setDouble(1, account.getBalance());</span>
+<span class="nc" id="L84">            preparedStatement.setString(2, account.getNumber());</span>
+            // 4. Execute the query
+<span class="nc" id="L86">            preparedStatement.executeUpdate();</span>
+            // 6. Close the resources (result set, statement, connection)
+<span class="nc" id="L88">            preparedStatement.close();</span>
+<span class="nc" id="L89">        } catch (Exception e) {</span>
+<span class="nc" id="L90">            logger.error(&quot;Error updating account: {}&quot;, e.getMessage());</span>
+        } finally {
+<span class="nc bnc" id="L92" title="All 2 branches missed.">            if (preparedStatement != null) {</span>
+                try {
+<span class="nc" id="L94">                    preparedStatement.close();</span>
+<span class="nc" id="L95">                } catch (Exception e) {</span>
+<span class="nc" id="L96">                    logger.error(&quot;Error closing prepared statement: {}&quot;, e.getMessage());</span>
+<span class="nc" id="L97">                }</span>
+            }
+        }
+<span class="nc" id="L100">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
