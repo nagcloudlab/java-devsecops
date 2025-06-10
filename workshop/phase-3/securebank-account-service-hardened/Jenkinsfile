@@ -11,19 +11,13 @@ pipeline {
 
   tools {
     jdk "${params.JAVA_VERSION}"
-    maven 'Maven 3.9' // Name from Jenkins tool config
+    maven 'Maven 3.9' // Make sure this name matches Jenkins -> Global Tool Config
   }
 
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://your-git-repo.git', branch: 'main'
-      }
-    }
-
-    stage('Cache Maven Repo') {
-      steps {
-        sh 'mkdir -p .m2/repository'
+        git url: 'https://github.com/nagcloudlab/java-devsecops.git', branch: 'main'
       }
     }
 
@@ -56,7 +50,6 @@ pipeline {
         expression { return env.BRANCH_NAME == 'main' }
       }
       steps {
-        // Requires Maven settings with credentials
         sh 'mvn deploy -s settings.xml'
       }
     }
