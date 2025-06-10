@@ -1,64 +1,66 @@
 pipeline {
-  agent any
+    agent any
 
-  environment {
-    MAVEN_OPTS = "-Dmaven.repo.local=.m2/repository"
-  }
-
-  parameters {
-    choice(name: 'JAVA_VERSION', choices: ['17', '21'], description: 'Java version to test with')
-  }
-
-  tools {
-    jdk "${params.JAVA_VERSION}"
-    maven 'Maven 3.9' // Make sure this name matches Jenkins -> Global Tool Config
-  }
-
-  stages {
-    stage('Checkout') {
-      steps {
-        git url: 'https://github.com/nagcloudlab/java-devsecops.git', branch: 'main'
-      }
+    parameters {
+        choice(name: 'JAVA_VERSION', choices: ['17', '21'], description: 'Java version to test with')
     }
 
-    stage('Compile') {
-      steps {
-        sh 'mvn clean compile'
-      }
+    environment {
+        MAVEN_OPTS = "-Dmaven.repo.local=.m2/repository"
     }
 
-    stage('Unit Tests') {
-      steps {
-        sh 'mvn test'
-      }
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/nagcloudlab/java-devsecops.git', branch: 'main'
+            }
+        }
+
+        stage('Cache Maven Repo') {
+            steps {
+                sh 'mkdir -p .m2/repository'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                sh 'mvn package -DskipTests'
+            }
+        }
+
+        stage('Archive Artifact') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
+
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Deploy logic can be added here'
+                // e.g., sh 'mvn deploy -s settings.xml'
+            }
+        }
     }
 
-    stage('Package JAR') {
-      steps {
-        sh 'mvn package -DskipTests'
-      }
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
+            cleanWs()
+        }
     }
-
-    stage('Archive Artifact') {
-      steps {
-        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-      }
-    }
-
-    stage('Optional: Deploy to Nexus') {
-      when {
-        expression { return env.BRANCH_NAME == 'main' }
-      }
-      steps {
-        sh 'mvn deploy -s settings.xml'
-      }
-    }
-  }
-
-  post {
-    always {
-      junit '**/target/surefire-reports/*.xml'
-      cleanWs()
-    }
-  }
 }
