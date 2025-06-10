@@ -1,0 +1,35 @@
+
+pipeline{
+    agent any
+    stages{
+        stage("java-build"){
+            steps{
+                dir('docker-k8s/services/java-web-service'){
+                    sh 'mvn clean package'
+                }
+            }
+        }
+        stage("docker-build"){
+            steps{
+                dir('docker-k8s/services/java-web-service'){
+                    sh 'docker build -t java-web-service .'
+                }
+            }
+        }
+        stage("docker-push"){
+            steps{
+                dir('docker-k8s/services/java-web-service'){
+                    sh 'docker tag java-web-service:latest docker.io/nagabhushanamn/java-web-service:latest'
+                    sh 'docker push docker.io/nagabhushanamn/java-web-service:latest'
+                }
+            }
+        }
+        stage("deploy"){
+            steps{
+                dir('docker-k8s/services/java-web-service'){
+                    input message: 'Deploy to myVM?', ok: 'Deploy'
+                }
+            }
+        }
+    }
+}

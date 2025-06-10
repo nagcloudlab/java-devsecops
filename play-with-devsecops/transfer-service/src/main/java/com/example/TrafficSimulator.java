@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Random;
 
 @Configuration
-@EnableAutoConfiguration
+@EnableAutoConfiguration()
 @ComponentScan(basePackages = "com.example")
 public class TrafficSimulator {
 

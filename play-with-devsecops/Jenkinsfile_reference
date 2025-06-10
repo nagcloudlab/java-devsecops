@@ -1,0 +1,98 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven 3'
+        jdk 'Java 17'
+    }
+
+    environment {
+        SONAR_HOST_URL = 'http://localhost:9000'
+        SONAR_LOGIN = credentials('sonar-token-id') // Setup in Jenkins > Credentials
+    }
+
+    stages {
+        stage('Prepare Workspace') {
+            steps {
+                echo 'Preparing workspace...'
+                dir('play-with-devsecops') {
+                    sh 'ls -al'
+                }
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                echo 'Compiling the project...'
+                dir('play-with-devsecops') {
+                    sh 'mvn compile'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running unit tests...'
+                dir('play-with-devsecops') {
+                    sh 'mvn test'
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                echo 'Packaging the project...'
+                dir('play-with-devsecops') {
+                    sh 'mvn package'
+                }
+            }
+        }
+
+        stage('SpotBugs Scan') {
+            steps {
+                echo 'Running SpotBugs analysis...'
+                dir('play-with-devsecops') {
+                    sh 'mvn spotbugs:spotbugs'
+                }
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                echo 'Running SonarQube analysis...'
+                dir('play-with-devsecops') {
+                    withSonarQubeEnv('SonarQubeServer') {
+                        sh """
+                        mvn sonar:sonar \
+                            -Dsonar.projectKey=play-with-devsecops \
+                            -Dsonar.host.url=${SONAR_HOST_URL} \
+                            -Dsonar.login=${SONAR_LOGIN}
+                        """
+                    }
+                }
+            }
+        }
+
+        stage('Collect Reports') {
+            steps {
+                echo 'Archiving test and analysis reports...'
+                dir('play-with-devsecops') {
+                    junit '**/target/surefire-reports/*.xml'
+                    archiveArtifacts artifacts: '**/target/spotbugsXml.xml', fingerprint: true
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build completed successfully!'
+        }
+        failure {
+            echo '❌ Build failed. Check logs for details.'
+        }
+        always {
+            echo '📦 Pipeline execution finished.'
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+
+- how to build an image from a Dockerfile
+- hot create container from an imagr with resources limits
+- how to run a container with a specific network
+- how to run a container with a specific volume
+
+----------------------------------------------------
+
+
+we should match desired-state with actual-state on containers:
+    i.e orchestration
+
+orchestration tool -> k8s
+
+-----------------------------------------------------
