@@ -61,7 +61,7 @@ pipeline {
             steps {
                 echo 'Deploy logic can be added here'
                 // e.g., sh 'mvn deploy -s settings.xml'
-                withCredentials([file(credentialsId: 'nexus-repo', variable: 'SETTINGS_XML')]) {
+                withCredentials([file(credentialsId: 'nexus_repo', variable: 'SETTINGS_XML')]) {
                     dir('workshop/phase-3/securebank-account-service-hardened') {
                         sh 'mvn deploy -s $SETTINGS_XML'
                     }
