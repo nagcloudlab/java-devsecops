@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
-    parameters {
-        choice(name: 'JAVA_VERSION', choices: ['17', '21'], description: 'Java version to test with')
-    }
+    // parameters {
+    //     choice(name: 'JAVA_VERSION', choices: ['17', '21'], description: 'Java version to test with')
+    // }
 
-    environment {
-        MAVEN_OPTS = "-Dmaven.repo.local=.m2/repository"
-    }
+    // environment {
+    //     MAVEN_OPTS = "-Dmaven.repo.local=.m2/repository"
+    // }
 
     stages {
         stage('Checkout') {
