@@ -55,9 +55,9 @@ pipeline {
         }
 
         stage('Deploy') {
-            when {
-                branch 'main'
-            }
+            // when {
+            //     branch 'main'
+            // }
             steps {
                 echo 'Deploy logic can be added here'
                 // e.g., sh 'mvn deploy -s settings.xml'
