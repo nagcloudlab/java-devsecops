@@ -24,19 +24,25 @@ pipeline {
 
         stage('Build') {
             steps {
+                dir('workshop/phase-3/securebank-account-service-hardened') {
                 sh 'mvn clean compile'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                dir('workshop/phase-3/securebank-account-service-hardened') {
+                    sh "mvn test"
+                }
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package -DskipTests'
+                dir('workshop/phase-3/securebank-account-service-hardened') {
+                    sh "mvn package -DskipTests"
+                }
             }
         }
 
