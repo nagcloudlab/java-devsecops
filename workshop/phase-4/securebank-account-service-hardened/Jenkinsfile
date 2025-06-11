@@ -1,0 +1,95 @@
+pipeline {
+    agent any
+
+    // parameters {
+    //     choice(name: 'JAVA_VERSION', choices: ['17', '21'], description: 'Java version to test with')
+    // }
+
+    // environment {
+    //     MAVEN_OPTS = "-Dmaven.repo.local=.m2/repository"
+    // }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/nagcloudlab/java-devsecops.git', branch: 'main'
+            }
+        }
+
+        stage('Cache Maven Repo') {
+            steps {
+                sh 'mkdir -p .m2/repository'
+            }
+        }
+
+
+        stage('Build') {
+            steps {
+                dir('workshop/phase-4/securebank-account-service-hardened') {
+                sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('workshop/phase-4/securebank-account-service-hardened') {
+                    sh "mvn test"
+                }
+            }
+        }
+
+        stage('SonarQube Scan') {
+            steps {
+                withCredentials([string(credentialsId: 'sonar_token', variable: 'SONAR_TOKEN')]) {
+                    dir('workshop/phase-4/securebank-account-service-hardened') {
+                        sh '''
+                            mvn sonar:sonar \
+                              -Dsonar.projectKey=securebank-account-service \
+                              -Dsonar.host.url=http://localhost:9000 \
+                              -Dsonar.login=$SONAR_TOKEN
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                dir('workshop/phase-4/securebank-account-service-hardened') {
+                    sh "mvn package -DskipTests"
+                }
+            }
+        }
+
+        stage('Archive Artifact') {
+            steps {
+                dir('workshop/phase-4/securebank-account-service-hardened') {
+                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                }
+            }
+        }
+
+        stage('Deploy') {
+            // when {
+            //     branch 'main'
+            // }
+            steps {
+                echo 'Deploy logic can be added here'
+                // e.g., sh 'mvn deploy -s settings.xml'
+                withCredentials([file(credentialsId: 'nexus_repo', variable: 'SETTINGS_XML')]) {
+                    dir('workshop/phase-4/securebank-account-service-hardened') {
+                        sh 'mvn deploy -s $SETTINGS_XML'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
+            cleanWs()
+        }
+    }
+}
